@@ -10,7 +10,7 @@ module Oym
     end
 
     def from_yaml(path)
-      raise "No such file" unless File.exist?(path)
+      raise Oym::Errors::FileMissingError, path unless File.exist?(path)
       require 'yaml'
       from_data(YAML.load_file(path))
     end

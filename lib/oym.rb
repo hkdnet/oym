@@ -1,3 +1,4 @@
+require 'oym/errors'
 require 'oym/resource'
 require 'oym/attribute'
 require 'oym/base'
