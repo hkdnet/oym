@@ -1,8 +1,8 @@
 module Oym
   module Resource
-    def attribute(name, klass: nil)
+    def attribute(name, klass: nil, array: false)
       attr_accessor name
-      oym_attributes.push(Oym::Attribute.new(name, klass))
+      oym_attributes.push(Oym::Attribute.new(name, klass, array))
     end
 
     def oym_attributes
