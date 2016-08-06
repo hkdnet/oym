@@ -1,5 +1,3 @@
-require "oym/version"
-
-module Oym
-  # Your code goes here...
-end
+require 'oym/resource'
+require 'oym/base'
+require 'oym/version'

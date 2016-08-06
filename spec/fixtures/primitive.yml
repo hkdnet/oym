@@ -1,0 +1,12 @@
+string: string
+number: 1
+bool: yes
+arr:
+  - yes
+  - true
+  - no
+  - false
+map:
+  positive: 1
+  negative: -1
+
