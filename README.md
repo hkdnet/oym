@@ -21,7 +21,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create your resource object to which you'd like to map your yaml.
+
+```yaml
+name: Dark Lord of Derkholm
+author:
+  name: Diana Wynne Jones
+```
+
+```ruby
+class Author < Oym::Base # inherit Oym::Base
+  attribute :name
+end
+
+class Book
+  extend Oym::Resource # or just extend Oym::Resource
+  attribute :name
+  attribute :author, klass: Author
+end
+```
+
+Then, call `from_yaml` with the yaml filepath.
+
+```ruby
+book = Book.from_yaml('path/to/yaml')
+book.name # => Dark Lord of Derkholm
+book.author.name #=> Diana Wynne Jones
+book.author.is_a?(Author) #=> true
+```
 
 ## Development
 
